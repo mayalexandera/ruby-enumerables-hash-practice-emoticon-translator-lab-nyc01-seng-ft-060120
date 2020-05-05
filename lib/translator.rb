@@ -16,9 +16,7 @@ def load_library(lib)
 def get_japanese_emoticon(lib, english_emoticon)
   hash = load_library("./lib/emoticons.yml")
   hash.each_pair do |emotion, lang|
-    if lang[:english] === english_emoticon
-      return lang[:japanese]
-    end
+    if lang[:english] === english_emoticon ? return lang[:japanese] : end
   end
   return "Sorry, that emoticon was not found"
 end
